@@ -1,0 +1,28 @@
+# wrangler.toml — deploy the atelier's single endpoint
+#
+#   cd worker
+#   bunx wrangler login
+#   bunx wrangler secret put RESEND_API_KEY
+#   bunx wrangler secret put OWNER_EMAIL
+#   bunx wrangler secret put TELEGRAM_BOT_TOKEN      # optional
+#   bunx wrangler secret put TELEGRAM_CHAT_ID        # optional
+#   bunx wrangler deploy
+#
+# The deployed URL (https://sadaf-order.<account>.workers.dev) becomes
+# NEXT_PUBLIC_ORDER_ENDPOINT for the static site build.
+
+name = "sadaf-order"
+main = "order-worker.ts"
+compatibility_date = "2026-01-01"
+
+[vars]
+# Where the static site lives — keep bots and foreign origins out.
+# Empty = allow any origin (dev); set it once you know your Pages URL,
+# e.g. ALLOWED_ORIGIN = "https://sadaf.github.io"
+ALLOWED_ORIGIN = ""
+
+# Secrets (never in this file):
+#   RESEND_API_KEY    — api key from resend.com
+#   OWNER_EMAIL       — where orders land
+#   RESEND_FROM       — optional, "Atelier <orders@yourdomain.com>"
+#   TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID — optional instant channel

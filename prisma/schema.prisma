@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model OrderBrief {
+  id              String   @id @default(cuid())
+  ref             String   @unique
+  brandName       String
+  industry        String?
+  businessDesc    String?
+  audience        String?
+  competitors     String?
+  differentiation String?
+  personality     String? // JSON array
+  visualStyle     String?
+  colorsLove      String? // JSON array
+  colorsAvoid     String?
+  usageAreas      String? // JSON array
+  concepts        String?
+  timeline        String?
+  budget          String?
+  contactName     String
+  contactMethod   String
+  links           String?
+  createdAt       DateTime @default(now())
+}
