@@ -1,0 +1,74 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      # Base path: "" for user sites (user.github.io) and custom domains,
+      # "/repo-name" for project sites. Override by setting the repository
+      # variable BASE_PATH to "none" (custom domain) or "/anything".
+      - name: Derive base path
+        id: base
+        env:
+          OVERRIDE: ${{ vars.BASE_PATH }}
+          REPO: ${{ github.repository }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          if [ -n "$OVERRIDE" ]; then
+            P="$OVERRIDE"
+            if [ "$P" = "none" ]; then P=""; fi
+          elif [ "$REPO" = "$OWNER/$OWNER.github.io" ]; then
+            P=""
+          else
+            P="/${REPO#*/}"
+          fi
+          echo "path=$P" >> "$GITHUB_OUTPUT"
+          echo "Using base path: '$P'"
+
+      - name: Build static site
+        env:
+          # Where the OrderTheater posts the brief from the static site.
+          # Set ORDER_ENDPOINT as a repository *variable* (Settings →
+          # Secrets and variables → Actions → Variables):
+          #   Worker:    https://sadaf-order.<account>.workers.dev
+          #   Formspree: https://formspree.io/f/<id>
+          #   PHP:       https://<host>/order/order.php
+          NEXT_PUBLIC_ORDER_ENDPOINT: ${{ vars.ORDER_ENDPOINT }}
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.base.outputs.path }}
+        run: bash scripts/build-static.sh
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
