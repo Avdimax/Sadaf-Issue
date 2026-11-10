@@ -26,15 +26,14 @@ export type FiledOrder = {
   createdAt: string; // ISO
 };
 
-/* ── palette (matches the site: paper / ink / brass) ── */
-const PAPER = "#FAF5EC";
+/* ── palette (matches the site: pearl / ink / ocean / silver) ── */
+const PEARL = "#F5F6F8";
 const CARD = "#FFFFFF";
-const INK = "#1A150E";
-const INK_SOFT = "#5A5142";
-const INK_FAINT = "#8A8071";
-const BRASS = "#7C5A28";
-const BRASS_SOFT = "#F1E7D3";
-const HAIRLINE = "#E7DCC6";
+const INK = "#16233A";
+const INK_SOFT = "#4D5C72";
+const INK_FAINT = "#707E92";
+const OCEAN = "#1D4066";
+const HAIRLINE = "#DDE3EA";
 
 const FONT = "Tahoma, 'Segoe UI', Arial, sans-serif";
 
@@ -112,7 +111,7 @@ export const orderEmailHtml = (o: FiledOrder): string => {
     .map((g) => {
       const rows = g.rows
         .map((r, i) => {
-          const last = i === g.rows.length - 1 ? "" : `border-bottom:1px solid #F3EDDF;`;
+          const last = i === g.rows.length - 1 ? "" : `border-bottom:1px solid #E9EDF2;`;
           return `
             <tr>
               <td style="${last}padding:12px 20px;">
@@ -128,7 +127,7 @@ export const orderEmailHtml = (o: FiledOrder): string => {
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${CARD};border:1px solid ${HAIRLINE};border-radius:10px;">
             <tr>
               <td style="padding:14px 20px 6px 20px;border-bottom:1px solid ${HAIRLINE};">
-                <span style="font-family:${FONT};font-size:12px;font-weight:bold;color:${BRASS};letter-spacing:1px;">${esc(g.title)}</span>
+                <span style="font-family:${FONT};font-size:12px;font-weight:bold;color:${OCEAN};letter-spacing:1px;">${esc(g.title)}</span>
               </td>
             </tr>
             ${rows}
@@ -141,8 +140,8 @@ export const orderEmailHtml = (o: FiledOrder): string => {
   return `<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(orderSubject(o))}</title></head>
-<body style="margin:0;padding:0;background:${PAPER};">
-  <div dir="rtl" style="background:${PAPER};padding:28px 8px;font-family:${FONT};">
+<body style="margin:0;padding:0;background:${PEARL};">
+  <div dir="rtl" style="background:${PEARL};padding:28px 8px;font-family:${FONT};">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
       <tr><td align="center">
         <table role="presentation" width="640" cellpadding="0" cellspacing="0" style="max-width:640px;width:100%;">
@@ -152,11 +151,11 @@ export const orderEmailHtml = (o: FiledOrder): string => {
             <td style="padding:0 28px 18px 28px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${INK};border-radius:12px;">
                 <tr>
-                  <td style="padding:22px 24px;color:${PAPER};">
-                    <div style="font-family:${FONT};font-size:11px;letter-spacing:2px;color:#C9A96A;margin:0 0 8px 0;">آتلیه‌ی صدف · نشان‌سازی</div>
+                  <td style="padding:22px 24px;color:${PEARL};">
+                    <div style="font-family:${FONT};font-size:11px;letter-spacing:2px;color:#A8C4DE;margin:0 0 8px 0;">آتلیه‌ی صدف · نشان‌سازی</div>
                     <div style="font-family:${FONT};font-size:22px;font-weight:bold;color:#FFFFFF;margin:0 0 10px 0;">سفارشِ نشانِ جدید</div>
                     <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-                      <td style="background:#3A3222;border-radius:6px;padding:6px 14px;font-family:${FONT};font-size:13px;color:#E8D5AC;letter-spacing:2px;">${esc(o.ref)}</td>
+                      <td style="background:#24354F;border-radius:6px;padding:6px 14px;font-family:${FONT};font-size:13px;color:#DDE3EA;letter-spacing:2px;">${esc(o.ref)}</td>
                     </tr></table>
                   </td>
                 </tr>
