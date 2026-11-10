@@ -37,19 +37,19 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "آتلیه صدف — طراح لوگو و هویت بصری",
   description:
-    "پرتفولیوی شخصیِ صدف — طراح لوگو و صنعتگر هویت. چهار برند، چهار جزیره: عطر اکسین، کافه هور، آکادمی نورث‌پیک و چای سُها. نشان‌هایی برای برندهایی که آرام حرف می‌زنند.",
+    "پرتفولیوی شخصیِ صدف — طراح لوگو و صنعتگر هویت. چهار برند، چهار صدف: عطر اکسین، کافه هور، آکادمی نورث‌پیک و چای سُها. نشان‌هایی برای برندهایی که آرام حرف می‌زنند.",
   keywords: ["طراحی لوگو", "هویت بصری", "طراحی گرافیک", "پرتفولیو", "برندینگ"],
   authors: [{ name: "صدف" }],
   icons: { icon: asset("/work/oxin-gold.png") },
   openGraph: {
     title: "آتلیه صدف — طراح لوگو و هویت بصری",
-    description: "مجمع‌الجزایرِ نشان‌ها — صنعتگریِ هویت برای برندهایی که آرام حرف می‌زنند.",
+    description: "صدف‌های نشان‌ها — صنعتگریِ هویت برای برندهایی که آرام حرف می‌زنند.",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F7F4ED",
+  themeColor: "#F5F6F8",
   width: "device-width",
   initialScale: 1,
 };
@@ -67,7 +67,7 @@ export default function RootLayout({
       style={{ "--grain": `url(${asset("/grain.png")})` } as React.CSSProperties}
     >
       <body
-        className={`${vazir.variable} ${markazi.variable} ${nastaliq.variable} ${manrope.variable} antialiased bg-paper text-ink`}
+        className={`${vazir.variable} ${markazi.variable} ${nastaliq.variable} ${manrope.variable} antialiased bg-pearl text-ink`}
       >
         {children}
       </body>

@@ -27,7 +27,7 @@ const OrderTheater = dynamic(
 export default function Page() {
   return (
     <SmoothScroll>
-      <div className="grain relative min-h-screen bg-paper text-ink">
+      <div className="grain relative min-h-screen bg-pearl text-ink">
         <Preloader />
         <Cursor />
         <Navbar />

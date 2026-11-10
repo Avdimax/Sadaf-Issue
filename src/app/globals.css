@@ -1,19 +1,24 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* ── Atelier Sadaf · Paper & Ink — clean daylight palette ── */
-  --color-paper: #f7f4ed;        /* warm gallery paper */
-  --color-paper-2: #eee9dd;      /* deeper section paper */
-  --color-card: #fcfaf4;         /* raised paper card / mat */
-  --color-ink: #211c15;          /* warm near-black text */
-  --color-ink-soft: #6f6759;     /* secondary text */
-  --color-ink-faint: #a69d8c;    /* muted meta text */
-  --color-brass: #a87c3f;        /* brass accent */
-  --color-brass-bright: #c9a15b; /* highlight brass */
-  --color-brass-deep: #7c5a28;   /* shadowed brass */
-  --color-turquoise: #2e8c86;    /* Isfahan turquoise — sparing accent */
-  --color-burgundy: #5c1626;     /* oxblood accent word */
-  --color-tea: #3d5a36;          /* Soha deep tea green */
+  /* ── Sadaf Design · Pearl & Ocean — luminous luxury palette ──
+     One dark anchor (deep ocean), one metallic (silver), cool pearl
+     neutrals, and a single chromatic accent (ocean blue). Restraint
+     is the luxury: every token earns its place. */
+  --color-pearl: #f5f6f8;        /* pearl white — cool mother-of-pearl */
+  --color-pearl-2: #e9ebef;      /* deeper pearl — light gray sections */
+  --color-shell: #fbfcfd;        /* raised shell card / mat */
+  --color-ink: #16233a;          /* deep ocean — primary text */
+  --color-ink-soft: #4d5c72;     /* slate — secondary text */
+  --color-ink-faint: #707e92;    /* mist — muted meta text */
+  --color-silver: #b9c2cd;       /* brushed silver — hairlines, ornaments */
+  --color-silver-bright: #dde3ea;/* bright silver — glitter strokes */
+  --color-silver-deep: #7e8b9d;  /* shadowed silver */
+  --color-ocean: #2e5c8f;        /* ocean blue — primary accent */
+  --color-ocean-bright: #6f9cc8; /* luminous ocean — highlights */
+  --color-ocean-deep: #1d4066;   /* deep current — text-grade accent */
+  --color-aqua: #4f9a94;         /* seafoam — sparing living accent */
+  --color-abalone: #2a6b66;      /* abalone teal — editorial accent words */
 
   --font-display: var(--font-vazir);
   --font-sans: var(--font-vazir);
@@ -41,7 +46,7 @@ html.lenis body {
 }
 
 body {
-  background: var(--color-paper);
+  background: var(--color-pearl);
   color: var(--color-ink);
   font-family: var(--font-vazir), "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
   overflow-x: clip;
@@ -58,8 +63,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-brass);
-  color: var(--color-paper);
+  background: var(--color-ocean);
+  color: var(--color-pearl);
 }
 
 /* ── Scrollbar (light) ── */
@@ -67,24 +72,24 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-paper);
+  background: var(--color-pearl);
 }
 ::-webkit-scrollbar-thumb {
-  background: #d8cfbc;
+  background: #cfd6df;
   border-radius: 10px;
-  border: 2px solid var(--color-paper);
+  border: 2px solid var(--color-pearl);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-brass);
+  background: var(--color-ocean);
 }
 
 /* ── Focus visibility for keyboard users ── */
 :focus-visible {
-  outline: 1px solid var(--color-brass);
+  outline: 1px solid var(--color-ocean);
   outline-offset: 4px;
 }
 
-/* ── Paper grain overlay ──
+/* ── Pearl grain overlay ──
      PERFORMANCE: the old version painted an feTurbulence SVG at the full
      layer size (200% viewport) — Chrome rasterizes fractal noise on the
      MAIN THREAD (multi-second freeze on HiDPI screens) and re-composites a
@@ -123,33 +128,19 @@ body {
   animation-play-state: paused !important;
 }
 
-/* ── Fine blueprint dot-grid (the geometry motif) ── */
+/* ── Fine nacre dot-grid (the geometry motif) ── */
 .dotgrid {
-  background-image: radial-gradient(rgba(33, 28, 21, 0.055) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(22, 35, 58, 0.05) 1px, transparent 1px);
   background-size: 26px 26px;
 }
 
-/* ── Island organic blob shapes ── */
-.blob-a {
-  border-radius: 46% 54% 52% 48% / 58% 44% 56% 42%;
-}
-.blob-b {
-  border-radius: 58% 42% 44% 56% / 42% 52% 48% 58%;
-}
-.blob-c {
-  border-radius: 40% 60% 58% 42% / 52% 40% 60% 48%;
-}
-.blob-d {
-  border-radius: 52% 48% 42% 58% / 48% 58% 42% 52%;
-}
-
 /* ────────────────────────────────────────────────
-   The islands — pure-CSS hover choreography.
-   Spring-like cubic-beziers replace JS spring
-   physics: zero JS cost, same overshoot feel.
-   The hover treatment is a *breath*, not a flash:
-   gentle lift, light veil, contained mat — never
-   a glare that spills over the surrounding paper.
+   The shells — four unique صدف silhouettes, clipped
+   by SVG paths (see components/portfolio/shells.ts).
+   The hover choreography is a *breath*, not a flash:
+   gentle lift, light veil, contained mat, the rim and
+   interior lines brightening — never a glare that
+   spills over the surrounding pearl.
    ──────────────────────────────────────────────── */
 .island-lift {
   transition: transform 0.55s cubic-bezier(0.22, 1.2, 0.36, 1);
@@ -177,6 +168,7 @@ body {
   opacity: 0.55;
 }
 
+/* the shell's silver rim — a quiet hairline following the silhouette */
 .island-rim {
   opacity: 0;
   transition: opacity 0.55s ease;
@@ -184,6 +176,16 @@ body {
 .island-landmass:hover .island-rim,
 .island-landmass:focus-visible .island-rim {
   opacity: 1;
+}
+
+/* interior shell lines — nacre ribs / spiral chambers / growth arcs */
+.shell-lines {
+  opacity: 0.4;
+  transition: opacity 0.55s ease;
+}
+.island-landmass:hover .shell-lines,
+.island-landmass:focus-visible .shell-lines {
+  opacity: 0.95;
 }
 
 .island-stage {
@@ -224,7 +226,7 @@ body {
   transition-delay: 0.07s;
 }
 
-/* Touch devices: no hover exists — the islands live permanently awake */
+/* Touch devices: no hover exists — the shells live permanently awake */
 @media (hover: none) {
   .island-terrain-scale {
     transform: scale(1.08);
@@ -234,6 +236,9 @@ body {
   }
   .island-rim {
     opacity: 0.7;
+  }
+  .shell-lines {
+    opacity: 0.75;
   }
   .island-stage {
     opacity: 0.9;
@@ -261,7 +266,7 @@ body {
   }
 }
 
-/* ── Floating (hovering landmass) ── */
+/* ── Floating (the drifting shell) ── */
 @keyframes island-float {
   0%, 100% { transform: translateY(0) rotate(var(--tilt, 0deg)); }
   50% { transform: translateY(-16px) rotate(calc(var(--tilt, 0deg) + 0.6deg)); }
@@ -311,9 +316,9 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(33, 28, 21, 0.28) 18%,
-    rgba(168, 124, 63, 0.75) 50%,
-    rgba(33, 28, 21, 0.28) 82%,
+    rgba(22, 35, 58, 0.25) 18%,
+    rgba(46, 92, 143, 0.65) 50%,
+    rgba(22, 35, 58, 0.25) 82%,
     transparent
   );
 }
@@ -326,7 +331,7 @@ body {
   width: 90px;
   border-radius: 99px;
   filter: blur(2px);
-  background: linear-gradient(90deg, transparent, rgba(201, 161, 91, 0.95), transparent);
+  background: linear-gradient(90deg, transparent, rgba(221, 227, 234, 0.95), rgba(111, 156, 200, 0.7), transparent);
   animation: hairline-glint 7s ease-in-out infinite;
 }
 @keyframes hairline-glint {
@@ -334,6 +339,48 @@ body {
   12% { opacity: 1; }
   50% { transform: translateX(100cqw); opacity: 1; }
   62% { opacity: 0; }
+}
+
+/* ── Glitter: the pearl-sheen sweep ──
+     A single transform-only diagonal sheen crossing a surface —
+     the "glitter" of the palette, spent sparingly (CTA, preloader). */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  inset: -40% -140%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.16) 46%,
+    rgba(221, 227, 234, 0.55) 50%,
+    rgba(255, 255, 255, 0.16) 54%,
+    transparent 62%
+  );
+  transform: translateX(-70%) rotate(0.001deg);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-sheen:hover::after,
+.btn-sheen:focus-visible::after {
+  transform: translateX(70%) rotate(0.001deg);
+}
+
+/* The iridescent progress bar (preloader) — mother-of-pearl in motion */
+.bar-iridescent {
+  background: linear-gradient(
+    270deg,
+    #dde3ea 0%,
+    #a8c4de 22%,
+    #6f9cc8 50%,
+    #a8c4de 78%,
+    #dde3ea 100%
+  );
 }
 
 /* ── Typography helpers ── */
@@ -368,21 +415,21 @@ body {
 
 /* ── Outline display text (ghost numerals) ── */
 .text-stroke-ink {
-  -webkit-text-stroke: 1px rgba(33, 28, 21, 0.22);
+  -webkit-text-stroke: 1px rgba(22, 35, 58, 0.22);
   color: transparent;
 }
-.text-stroke-brass {
-  -webkit-text-stroke: 1px rgba(168, 124, 63, 0.55);
+.text-stroke-ocean {
+  -webkit-text-stroke: 1px rgba(46, 92, 143, 0.5);
   color: transparent;
 }
 
-/* ── Island wake ripples ── */
+/* ── Shell wake ripples ── */
 @keyframes ripple {
   0% { transform: translate(-50%, -50%) scale(0.55); opacity: 0.9; }
   100% { transform: translate(-50%, -50%) scale(1.25); opacity: 0; }
 }
 
-/* ── Gold dust drifting in daylight ── */
+/* ── Pearl dust drifting in daylight ── */
 @keyframes firefly {
   0%, 100% { transform: translate(0, 0); opacity: 0.15; }
   30% { opacity: 0.9; }
@@ -438,7 +485,7 @@ body {
   animation: varx-fade-in 0.5s ease 0.85s both;
 }
 
-/* A new island's mark arrives under a soft rise — replays per brand
+/* A new shell's mark arrives under a soft rise — replays per brand
    because the stage stack is keyed by the island id */
 @keyframes varx-mark-in {
   from { opacity: 0; transform: translateY(22px) scale(0.955); }
