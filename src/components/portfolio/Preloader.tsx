@@ -8,13 +8,13 @@ const faNum = (n: number) =>
   String(n).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
 
 /**
- * Preloader — paper curtains, the Nastaliq signature «صدف»,
- * a brass counter in Farsi digits, then the reveal.
+ * Preloader — pearl curtains, the Nastaliq signature «صدف»,
+ * a ocean counter in Farsi digits, then the reveal.
  *
  * The counter + signature always play for ~2 seconds — the atelier's
  * visual overture — and the hero intro is chained to the moment the
  * curtains begin to part, so the first headline rises *underneath* the
- * opening paper: one continuous movement, no hard cut.
+ * opening pearl: one continuous movement, no hard cut.
  * (Reduced-motion visitors still skip straight to the atelier.)
  */
 export default function Preloader() {
@@ -77,7 +77,7 @@ export default function Preloader() {
         ease: "power3.in",
         stagger: 0.04,
       }, 1.2)
-      // the hero's first headline rises beneath the parting paper
+      // the hero's first headline rises beneath the parting pearl
       .call(announceHero, [], 1.35)
       .to(".preloader-curtain-top", {
         yPercent: -100,
@@ -89,7 +89,7 @@ export default function Preloader() {
         duration: 0.8,
         ease: "power4.inOut",
       }, 1.45)
-      // scroll returns to the visitor as the paper is still lifting
+      // scroll returns to the visitor as the pearl is still lifting
       .call(unlockScroll, [], 1.65)
       // the layer itself breathes away, then is released
       .to(rootRef.current, { opacity: 0, duration: 0.2, ease: "power1.out" }, 2.05)
@@ -106,28 +106,28 @@ export default function Preloader() {
   return (
     <div ref={rootRef} className="fixed inset-0 z-[400]" role="status" aria-label="در حال بارگذاری">
       {/* Paper curtains */}
-      <div className="preloader-curtain-top absolute inset-x-0 top-0 h-1/2 bg-paper-2" />
-      <div className="preloader-curtain-bottom absolute inset-x-0 bottom-0 h-1/2 bg-paper-2" />
+      <div className="preloader-curtain-top absolute inset-x-0 top-0 h-1/2 bg-pearl-2" />
+      <div className="preloader-curtain-bottom absolute inset-x-0 bottom-0 h-1/2 bg-pearl-2" />
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-7">
         {/* The Nastaliq signature inside rotating girih rings */}
         <div className="preloader-fade relative flex h-40 w-40 items-center justify-center">
-          <div className="spin-slow absolute inset-0 rounded-full border border-dashed border-brass/40" />
-          <div className="spin-slower absolute inset-3 rounded-full border border-brass/25" />
+          <div className="spin-slow absolute inset-0 rounded-full border border-dashed border-ocean/40" />
+          <div className="spin-slower absolute inset-3 rounded-full border border-ocean/25" />
           <span className="nastaliq select-none px-4 pb-3 text-6xl font-bold leading-none text-ink">
             صدف
           </span>
         </div>
 
         <div className="preloader-fade flex items-center gap-5">
-          <span className="label-fa text-brass-deep">آتلیه صدف</span>
-          <span className="h-px w-10 bg-brass/40" />
+          <span className="label-fa text-ocean-deep">آتلیه صدف</span>
+          <span className="h-px w-10 bg-ocean/40" />
           <span className="label-fa text-ink-soft">طراحیِ لوگو و هویت</span>
         </div>
 
         <div className="preloader-fade flex items-baseline gap-2">
-          <span ref={counterRef} className="display-fa text-5xl font-semibold tabular-nums text-brass-deep">
+          <span ref={counterRef} className="display-fa text-5xl font-semibold tabular-nums text-ocean-deep">
             ۰۰۰
           </span>
           <span className="label-fa text-ink-faint">/ ۱۰۰</span>
@@ -135,7 +135,7 @@ export default function Preloader() {
 
         <div className="preloader-fade h-px w-56 overflow-hidden bg-ink/10">
           <div
-            className="preloader-bar h-full w-full origin-right scale-x-0 bg-gradient-to-l from-brass-bright via-brass to-brass-deep"
+            className="preloader-bar bar-iridescent h-full w-full origin-right scale-x-0"
             style={{ animation: "none" }}
           />
         </div>

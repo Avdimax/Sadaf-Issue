@@ -156,7 +156,7 @@ export default function BrandStage() {
     <section
       ref={rootRef}
       id="top"
-      className="dotgrid relative flex min-h-svh flex-col justify-between overflow-hidden bg-paper pt-28"
+      className="dotgrid relative flex min-h-svh flex-col justify-between overflow-hidden bg-pearl pt-28"
       aria-label="نشانِ آتلیه"
     >
       {/* Ambient daylight washes — soft-edged radial gradients, NO css blur:
@@ -168,7 +168,7 @@ export default function BrandStage() {
         className="pointer-events-none absolute -start-40 top-1/4 h-[44rem] w-[44rem] rounded-full opacity-70"
         style={{
           background:
-            "radial-gradient(circle, rgba(201,161,91,0.16) 0%, rgba(201,161,91,0.05) 45%, rgba(201,161,91,0) 70%)",
+            "radial-gradient(circle, rgba(111,156,200,0.16) 0%, rgba(111,156,200,0.05) 45%, rgba(111,156,200,0) 70%)",
         }}
       />
       <div
@@ -176,7 +176,7 @@ export default function BrandStage() {
         className="pointer-events-none absolute -end-52 bottom-0 h-[38rem] w-[38rem] rounded-full opacity-60"
         style={{
           background:
-            "radial-gradient(circle, rgba(46,140,134,0.10) 0%, rgba(46,140,134,0.03) 45%, rgba(46,140,134,0) 70%)",
+            "radial-gradient(circle, rgba(79,154,148,0.10) 0%, rgba(79,154,148,0.03) 45%, rgba(79,154,148,0) 70%)",
         }}
       />
 
@@ -193,8 +193,8 @@ export default function BrandStage() {
       <div className="relative z-10 mx-auto flex w-full max-w-[1600px] items-center justify-between px-6 md:px-12">
         <p className="brand-meta label-fa">پرتفولیو — ۱۴۰۵</p>
         <p className="brand-meta label-fa hidden sm:block">آتلیه‌ی طراحیِ لوگو و هویت</p>
-        <p className="brand-meta label-fa flex items-center gap-2 text-brass-deep">
-          <span className="h-1.5 w-1.5 rounded-full bg-turquoise" />
+        <p className="brand-meta label-fa flex items-center gap-2 text-ocean-deep">
+          <span className="h-1.5 w-1.5 rounded-full bg-aqua" />
           اصفهان، ایران
         </p>
       </div>
@@ -210,7 +210,7 @@ export default function BrandStage() {
               </span>
             </span>
             <span className="block overflow-hidden pb-[0.34em] -mb-[0.26em]">
-              <span className="brand-line brand-title-2 editorial block text-[11vw] font-medium text-brass-deep md:text-[6.4vw]">
+              <span className="brand-line brand-title-2 editorial block text-[11vw] font-medium text-ocean-deep md:text-[6.4vw]">
                 صنعتگرِ نشان‌های ماندگار
               </span>
             </span>
@@ -219,7 +219,7 @@ export default function BrandStage() {
           <p className="brand-meta mt-9 max-w-xl text-justify text-[0.98rem] font-light leading-loose text-ink-soft lg:text-right">
             این‌جا محلِ تقطیرِ نشان است — جایی که هندسه، خوشنویسی و نورِ ایران در خدمتِ
             برندهایی می‌نشینند که <span className="font-semibold text-ink">آرام حرف می‌زنند</span>.
-            هر هویت، یک جزیره است؛ با هوای خاص، گیاهان و پرچمِ خودش.
+            هر هویت، یک صدف است؛ با رنگ، نور و مرواریدِ خودش.
           </p>
 
           {/* The placeholder proclamation — borderless, hairline separated */}
@@ -227,7 +227,7 @@ export default function BrandStage() {
             {["هندسه", "خوشنویسی", "مینیمال", "میراثِ ایرانی"].map((f, i) => (
               <span key={f} className="flex items-center gap-2.5">
                 <svg width="7" height="7" viewBox="0 0 8 8" aria-hidden="true" className="shrink-0">
-                  <rect x="1.2" y="1.2" width="5.6" height="5.6" fill="#A87C3F" transform="rotate(45 4 4)" opacity={i === 0 ? 0.9 : 0.55} />
+                  <rect x="1.2" y="1.2" width="5.6" height="5.6" fill="#2E5C8F" transform="rotate(45 4 4)" opacity={i === 0 ? 0.9 : 0.55} />
                 </svg>
                 <span className="label-fa text-[0.74rem] text-ink-soft">{f}</span>
               </span>
@@ -240,7 +240,7 @@ export default function BrandStage() {
           {/* Rotating girih star behind (drifts with the cursor) */}
           <div ref={girihRef} className="brand-girih pointer-events-none absolute -inset-14 md:-inset-16" aria-hidden="true">
             <svg viewBox="0 0 200 200" className="h-full w-full opacity-[0.2]" fill="none">
-              <g stroke="#7C5A28" strokeWidth="0.65">
+              <g stroke="#7E8B9D" strokeWidth="0.65">
                 <rect x="42" y="42" width="116" height="116" />
                 <rect x="42" y="42" width="116" height="116" transform="rotate(45 100 100)" />
                 <circle cx="100" cy="100" r="81" />
@@ -253,14 +253,14 @@ export default function BrandStage() {
           {/* Arch echo hairline */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 translate-x-3 translate-y-3 rounded-t-full border border-brass/35"
+            className="absolute inset-0 translate-x-3 translate-y-3 rounded-t-full border border-ocean/35"
           />
 
           {/* The drafting stage */}
           <div
             ref={emblemRef}
             data-cursor="view"
-            className="brand-emblem relative aspect-[4/5] overflow-hidden rounded-t-full border border-brass/25 bg-card shadow-[0_45px_90px_-30px_rgba(80,62,35,0.38)]"
+            className="brand-emblem relative aspect-[4/5] overflow-hidden rounded-t-full border border-ocean/25 bg-shell shadow-[0_45px_90px_-30px_rgba(22,35,58,0.38)]"
           >
             {/* Paper wash — an adjustment layer above the plate */}
             <div
@@ -268,7 +268,7 @@ export default function BrandStage() {
               className="pointer-events-none absolute inset-0 z-10"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(255,251,242,0.16) 0%, rgba(124,90,40,0.05) 46%, rgba(46,53,40,0.12) 100%)",
+                  "linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(125,140,160,0.06) 46%, rgba(22,35,58,0.12) 100%)",
               }}
             />
 
@@ -279,19 +279,19 @@ export default function BrandStage() {
               <span className="brand-guide absolute left-1/2 top-1/2 h-[128%] w-px -translate-x-1/2 -translate-y-1/2 rotate-45 bg-ink/[0.06]" />
               <span className="brand-guide absolute left-1/2 top-1/2 h-[128%] w-px -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-ink/[0.06]" />
               {/* corner ticks */}
-              <span className="brand-guide absolute start-5 top-5 h-3 w-3 border-s border-t border-brass/50" />
-              <span className="brand-guide absolute end-5 top-5 h-3 w-3 border-e border-t border-brass/50" />
-              <span className="brand-guide absolute start-5 bottom-5 h-3 w-3 border-s border-b border-brass/50" />
-              <span className="brand-guide absolute end-5 bottom-5 h-3 w-3 border-e border-b border-brass/50" />
+              <span className="brand-guide absolute start-5 top-5 h-3 w-3 border-s border-t border-ocean/50" />
+              <span className="brand-guide absolute end-5 top-5 h-3 w-3 border-e border-t border-ocean/50" />
+              <span className="brand-guide absolute start-5 bottom-5 h-3 w-3 border-s border-b border-ocean/50" />
+              <span className="brand-guide absolute end-5 bottom-5 h-3 w-3 border-e border-b border-ocean/50" />
             </div>
 
             {/* The mark itself — ص inside construction rings */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative flex aspect-square w-[74%] items-center justify-center">
-                <div className="brand-guide spin-slow absolute inset-0 rounded-full border border-dashed border-brass/60" />
+                <div className="brand-guide spin-slow absolute inset-0 rounded-full border border-dashed border-ocean/60" />
                 <div className="brand-guide spin-slower absolute inset-[13%] rounded-full border border-ink/15" />
                 <svg viewBox="0 0 200 200" className="brand-guide absolute inset-[8%] h-auto w-[84%] opacity-[0.22]" fill="none" aria-hidden="true">
-                  <g stroke="#7C5A28" strokeWidth="0.75">
+                  <g stroke="#7E8B9D" strokeWidth="0.75">
                     <rect x="46" y="46" width="108" height="108" />
                     <rect x="46" y="46" width="108" height="108" transform="rotate(45 100 100)" />
                   </g>
@@ -304,11 +304,11 @@ export default function BrandStage() {
 
             {/* The badge — the honest placeholder */}
             <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center pb-7 pt-14"
-              style={{ background: "linear-gradient(180deg, transparent, rgba(247,244,237,0.92) 55%)" }}>
-              <span className="label-fa flex items-center gap-2.5 border border-brass/50 bg-paper px-4 py-2 text-[0.72rem] text-ink shadow-[0_8px_24px_rgba(80,62,35,0.12)]">
+              style={{ background: "linear-gradient(180deg, transparent, rgba(245,246,248,0.92) 55%)" }}>
+              <span className="label-fa flex items-center gap-2.5 border border-ocean/50 bg-pearl px-4 py-2 text-[0.72rem] text-ink shadow-[0_8px_24px_rgba(22,35,58,0.12)]">
                 <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brass-bright opacity-60" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brass" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ocean-bright opacity-60" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-ocean" />
                 </span>
                 نشانِ آتلیه — در دستِ ساخت
               </span>
@@ -325,11 +325,11 @@ export default function BrandStage() {
             ].map((s, i) => (
               <span
                 key={i}
-                className="absolute h-1 w-1 rounded-full bg-brass"
+                className={`absolute h-1 w-1 rounded-full ${i % 3 === 0 ? "bg-ocean-bright" : "bg-silver"}`}
                 style={{
                   left: s.l,
                   top: s.t,
-                  boxShadow: "0 0 8px rgba(168,124,63,0.7)",
+                  boxShadow: i % 3 === 0 ? "0 0 8px rgba(111,156,200,0.65)" : "0 0 8px rgba(185,194,205,0.9)",
                   animation: `firefly ${5 + i}s ease-in-out ${s.d} infinite`,
                 }}
               />
@@ -351,13 +351,13 @@ export default function BrandStage() {
           className="brand-meta group flex items-center gap-4"
           aria-label="رفتن به بخش آثار"
         >
-          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-brass/40 transition-all duration-500 group-hover:border-brass group-hover:bg-brass/10">
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-ocean/40 transition-all duration-500 group-hover:border-ocean group-hover:bg-ocean/10">
             <svg width="14" height="18" viewBox="0 0 14 18" fill="none" aria-hidden="true">
-              <path d="M7 1v14m0 0l-5.5-5.5M7 15l5.5-5.5" stroke="#7C5A28" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M7 1v14m0 0l-5.5-5.5M7 15l5.5-5.5" stroke="#1D4066" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
-          <span className="label-fa text-ink-soft transition-colors group-hover:text-brass-deep">
-            به جزایر سُر بخورید
+          <span className="label-fa text-ink-soft transition-colors group-hover:text-ocean-deep">
+            به صدف‌ها سُر بخورید
           </span>
         </button>
 

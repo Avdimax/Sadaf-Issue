@@ -198,11 +198,11 @@ function Field({
             onEnter?.();
           }
         }}
-        className={`w-full border-b border-ink/25 bg-transparent pb-3 pt-1 text-ink outline-none transition-colors duration-300 placeholder:text-ink-faint/70 focus:border-brass ${
+        className={`w-full border-b border-ink/25 bg-transparent pb-3 pt-1 text-ink outline-none transition-colors duration-300 placeholder:text-ink-faint/70 focus:border-ocean ${
           big ? "text-[1.25rem] md:text-[1.45rem] font-medium" : "text-[0.95rem]"
         }`}
       />
-      {hint ? <span className="label-fa mt-2.5 block text-[0.66rem] text-burgundy/90">{hint}</span> : null}
+      {hint ? <span className="label-fa mt-2.5 block text-[0.66rem] text-abalone/90">{hint}</span> : null}
     </label>
   );
 }
@@ -226,9 +226,9 @@ function Area({
             onEnter?.();
           }
         }}
-        className="w-full resize-none border-b border-ink/25 bg-transparent pb-3 pt-1 text-[1.15rem] leading-relaxed text-ink outline-none transition-colors duration-300 placeholder:text-ink-faint/70 focus:border-brass"
+        className="w-full resize-none border-b border-ink/25 bg-transparent pb-3 pt-1 text-[1.15rem] leading-relaxed text-ink outline-none transition-colors duration-300 placeholder:text-ink-faint/70 focus:border-ocean"
       />
-      {hint ? <span className="label-fa mt-2.5 block text-[0.66rem] text-burgundy/90">{hint}</span> : null}
+      {hint ? <span className="label-fa mt-2.5 block text-[0.66rem] text-abalone/90">{hint}</span> : null}
     </label>
   );
 }
@@ -263,8 +263,8 @@ function Chips({
             aria-pressed={on}
             className={`label-fa rounded-full border px-5 py-2.5 text-[0.8rem] transition-all duration-300 ${
               on
-                ? "border-brass bg-brass text-paper shadow-[0_6px_18px_rgba(168,124,63,0.28)]"
-                : "border-ink/20 text-ink-soft hover:border-brass/60 hover:text-ink"
+                ? "border-ocean bg-ocean text-pearl shadow-[0_6px_18px_rgba(46,92,143,0.28)]"
+                : "border-ink/20 text-ink-soft hover:border-ocean/60 hover:text-ink"
             }`}
           >
             {opt}
@@ -475,24 +475,24 @@ export default function OrderTheater() {
           beneath it, so a blurred scrim would re-filter every grain step */}
       <div
         ref={scrimRef}
-        className="absolute inset-0 bg-[rgba(26,21,14,0.6)]"
+        className="absolute inset-0 bg-[rgba(15,26,44,0.62)]"
         onClick={() => phase === "form" && closeOrder()}
       />
 
       {/* Finial above the arch */}
       <div aria-hidden="true" className="pointer-events-none relative z-10 hidden h-8 flex-col items-center justify-end md:flex">
-        <span className="h-1.5 w-1.5 rounded-full bg-brass" />
-        <span className="h-6 w-px bg-brass/50" />
+        <span className="h-1.5 w-1.5 rounded-full bg-ocean" />
+        <span className="h-6 w-px bg-ocean/50" />
       </div>
 
       {/* The stage panel — a Persian arch */}
       <div
         ref={panelRef}
-        className="relative z-10 flex max-h-[88svh] w-full max-w-[600px] flex-col overflow-hidden rounded-t-[7rem] border border-brass/25 bg-paper shadow-[0_60px_140px_-30px_rgba(20,15,8,0.55)] md:rounded-t-[9rem]"
+        className="relative z-10 flex max-h-[88svh] w-full max-w-[600px] flex-col overflow-hidden rounded-t-[7rem] border border-ocean/25 bg-pearl shadow-[0_60px_140px_-30px_rgba(15,26,44,0.55)] md:rounded-t-[9rem]"
       >
         {/* Arch ornament */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-20">
-          <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-l from-brass-bright/0 via-brass-bright/70 to-brass-bright/0" />
+          <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-l from-ocean-bright/0 via-ocean-bright/70 to-ocean-bright/0" />
           <div className="dotgrid absolute inset-0 opacity-60" />
         </div>
 
@@ -512,7 +512,7 @@ export default function OrderTheater() {
           <div className="relative z-10 px-7 pt-9 md:px-12 md:pt-11">
             <div className="h-[3px] w-full overflow-hidden rounded-full bg-ink/10">
               <div
-                className="h-full origin-right bg-gradient-to-l from-brass-bright via-brass to-brass-deep transition-all duration-500 ease-out"
+                className="h-full origin-right bg-gradient-to-l from-ocean-bright via-ocean to-ocean-deep transition-all duration-500 ease-out"
                 style={{ transform: `scaleX(${progress})` }}
               />
             </div>
@@ -523,8 +523,8 @@ export default function OrderTheater() {
         <div className="relative z-10 shrink-0 px-7 pb-2 pt-5 md:px-12">
           <div className="flex items-start justify-between gap-6">
             <div className="flex items-center gap-3">
-              <span className="label-fa text-[0.62rem] text-brass-deep">تئاترِ سفارش</span>
-              <span className="h-1 w-1 rounded-full bg-brass/60" />
+              <span className="label-fa text-[0.62rem] text-ocean-deep">تئاترِ سفارش</span>
+              <span className="h-1 w-1 rounded-full bg-ocean/60" />
               <span className="label-fa text-[0.62rem] text-ink-faint">
                 {onReview
                   ? "پرده‌ی آخر — مرورِ بریف"
@@ -535,10 +535,10 @@ export default function OrderTheater() {
               data-cursor="link"
               onClick={closeOrder}
               aria-label="بستنِ پنجره‌ی سفارش"
-              className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-ink/15 transition-colors duration-300 hover:border-brass hover:bg-brass/10"
+              className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-ink/15 transition-colors duration-300 hover:border-ocean hover:bg-ocean/10"
             >
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M1 1l10 10M11 1L1 11" stroke="#7C5A28" strokeWidth="1.4" strokeLinecap="round" />
+                <path d="M1 1l10 10M11 1L1 11" stroke="#1D4066" strokeWidth="1.4" strokeLinecap="round" />
               </svg>
             </button>
           </div>
@@ -558,7 +558,7 @@ export default function OrderTheater() {
                 const missing = nudge && q.required && (Array.isArray(value) ? value.length === 0 : !String(value).trim());
                 return (
                   <>
-                    <p className="editorial text-lg text-brass-deep md:text-xl">{q.sub}</p>
+                    <p className="editorial text-lg text-ocean-deep md:text-xl">{q.sub}</p>
                     <h3 className="display-fa mt-2 text-[1.55rem] font-extrabold leading-[1.35] text-ink md:text-[2rem]">
                       {q.title}
                     </h3>
@@ -616,7 +616,7 @@ export default function OrderTheater() {
           {/* The review — the whole brief, editable */}
           {phase === "form" && onReview && (
             <div className="pb-5">
-              <p className="editorial text-lg text-brass-deep md:text-xl">
+              <p className="editorial text-lg text-ocean-deep md:text-xl">
                 همه‌چیز یک‌جا — هر پاسخی را می‌شود ویرایش
               </p>
               <h3 className="display-fa mt-2 text-[1.55rem] font-extrabold leading-[1.35] text-ink md:text-[2rem]">
@@ -648,7 +648,7 @@ export default function OrderTheater() {
                       <button
                         data-cursor="link"
                         onClick={() => jumpTo(i)}
-                        className="label-fa shrink-0 border-b border-brass/50 pb-0.5 text-[0.66rem] text-brass-deep transition-colors duration-300 hover:border-brass hover:text-ink"
+                        className="label-fa shrink-0 border-b border-ocean/50 pb-0.5 text-[0.66rem] text-ocean-deep transition-colors duration-300 hover:border-ocean hover:text-ink"
                       >
                         ویرایش
                       </button>
@@ -665,7 +665,7 @@ export default function OrderTheater() {
 
           {phase === "sending" && (
             <div className="flex flex-col items-center gap-6 py-16">
-              <span className="spin-slow flex h-16 w-16 items-center justify-center rounded-full border border-dashed border-brass/50" />
+              <span className="spin-slow flex h-16 w-16 items-center justify-center rounded-full border border-dashed border-ocean/50" />
               <p className="editorial text-2xl font-medium text-ink-soft">بریف به آتلیه می‌رود…</p>
             </div>
           )}
@@ -673,21 +673,21 @@ export default function OrderTheater() {
           {phase === "done" && (
             <div className="flex flex-col items-center gap-6 py-12 text-center">
               <div className="relative flex h-32 w-32 items-center justify-center">
-                <div className="spin-slow absolute inset-0 rounded-full border border-dashed border-brass/45" />
+                <div className="spin-slow absolute inset-0 rounded-full border border-dashed border-ocean/45" />
                 <svg viewBox="0 0 200 200" className="absolute inset-3 h-auto w-[84%] opacity-[0.18]" fill="none" aria-hidden="true">
-                  <g stroke="#7C5A28" strokeWidth="0.8">
+                  <g stroke="#1D4066" strokeWidth="0.8">
                     <rect x="46" y="46" width="108" height="108" />
                     <rect x="46" y="46" width="108" height="108" transform="rotate(45 100 100)" />
                   </g>
                 </svg>
-                <span className="nastaliq select-none px-2 pb-2 text-5xl font-bold leading-none text-brass-deep">ص</span>
+                <span className="nastaliq select-none px-2 pb-2 text-5xl font-bold leading-none text-ocean-deep">ص</span>
               </div>
               <h4 className="display-fa text-3xl font-extrabold text-ink">بریفِ شما رسید</h4>
               <p className="editorial max-w-sm text-xl leading-relaxed text-ink-soft">
                 نشانِ شما، پرده‌ی بعدیِ تئاتر است — ظرفِ ۴۸ ساعت پاسخ می‌گیرید.
               </p>
               {refCode && (
-                <span className="label-fa border border-brass/40 px-5 py-2.5 text-[0.74rem] text-brass-deep">
+                <span className="label-fa border border-ocean/40 px-5 py-2.5 text-[0.74rem] text-ocean-deep">
                   کدِ پیگیری: <span className="tracking-widest">{refCode}</span>
                 </span>
               )}
@@ -696,9 +696,9 @@ export default function OrderTheater() {
 
           {phase === "error" && (
             <div className="flex flex-col items-center gap-6 py-12 text-center">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-burgundy/40">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[#A94F35]/40">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                  <path d="M9 1v10m0 3.5v.5" stroke="#5c1626" strokeWidth="1.6" strokeLinecap="round" />
+                  <path d="M9 1v10m0 3.5v.5" stroke="#A94F35" strokeWidth="1.6" strokeLinecap="round" />
                 </svg>
               </span>
               <h4 className="display-fa text-2xl font-extrabold text-ink">پرده موقتاً بسته شد</h4>
@@ -709,14 +709,14 @@ export default function OrderTheater() {
                 <button
                   data-cursor="link"
                   onClick={submit}
-                  className="label-fa border border-brass/40 px-6 py-3 text-[0.74rem] text-brass-deep transition-colors duration-300 hover:border-brass hover:bg-brass hover:text-paper"
+                  className="label-fa border border-ocean/40 px-6 py-3 text-[0.74rem] text-ocean-deep transition-colors duration-300 hover:border-ocean hover:bg-ocean hover:text-pearl"
                 >
                   تلاشِ دوباره
                 </button>
                 <a
                   data-cursor="link"
                   href="mailto:hello@sadaf.design?subject=%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C%20%D9%84%D9%88%DA%AF%D9%88"
-                  className="label-fa text-[0.74rem] text-ink-soft underline decoration-brass/50 underline-offset-4 transition-colors hover:text-ink"
+                  className="label-fa text-[0.74rem] text-ink-soft underline decoration-ocean/50 underline-offset-4 transition-colors hover:text-ink"
                 >
                   hello@sadaf.design
                 </a>
@@ -726,7 +726,7 @@ export default function OrderTheater() {
         </div>
 
         {/* Footer — the conversation controls */}
-        <div className="relative z-10 shrink-0 border-t border-ink/10 bg-paper-2/40 px-7 py-5 md:px-12">
+        <div className="relative z-10 shrink-0 border-t border-ink/10 bg-pearl-2/40 px-7 py-5 md:px-12">
           {phase === "form" && (
             <div className="flex items-center justify-between gap-4">
               {step > 0 ? (
@@ -736,7 +736,7 @@ export default function OrderTheater() {
                   className="label-fa group flex items-center gap-3 text-[0.74rem] text-ink-soft transition-colors hover:text-ink"
                 >
                   <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="transition-transform duration-300 group-hover:-translate-x-1">
-                    <path d="M1 7h12m0 0L8.5 2.5M13 7l-4.5 4.5" stroke="#7C5A28" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M1 7h12m0 0L8.5 2.5M13 7l-4.5 4.5" stroke="#1D4066" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   بازگشت
                 </button>
@@ -748,7 +748,7 @@ export default function OrderTheater() {
                 <button
                   data-cursor="link"
                   onClick={submit}
-                  className="label-fa group flex items-center gap-3 border border-brass bg-brass px-8 py-3 text-[0.78rem] text-paper transition-all duration-400 hover:bg-brass-deep hover:border-brass-deep"
+                  className="label-fa group flex items-center gap-3 border border-ocean bg-ocean px-8 py-3 text-[0.78rem] text-pearl transition-all duration-400 hover:bg-ocean-deep hover:border-ocean-deep"
                 >
                   ارسالِ بریف
                   <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1">
@@ -759,7 +759,7 @@ export default function OrderTheater() {
                 <button
                   data-cursor="link"
                   onClick={goNext}
-                  className="label-fa group flex items-center gap-3 border border-brass/50 px-7 py-3 text-[0.78rem] text-brass-deep transition-all duration-400 hover:border-brass hover:bg-brass hover:text-paper"
+                  className="label-fa group flex items-center gap-3 border border-ocean/50 px-7 py-3 text-[0.78rem] text-ocean-deep transition-all duration-400 hover:border-ocean hover:bg-ocean hover:text-pearl"
                 >
                   {step === TOTAL - 1 ? "مرورِ بریف" : "ادامه"}
                   <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1">
@@ -775,7 +775,7 @@ export default function OrderTheater() {
               <button
                 data-cursor="link"
                 onClick={closeOrder}
-                className="label-fa border border-ink/20 px-8 py-3 text-[0.74rem] text-ink-soft transition-colors duration-300 hover:border-brass hover:text-brass-deep"
+                className="label-fa border border-ink/20 px-8 py-3 text-[0.74rem] text-ink-soft transition-colors duration-300 hover:border-ocean hover:text-ocean-deep"
               >
                 {phase === "done" ? "بستنِ پرده" : "بستن"}
               </button>

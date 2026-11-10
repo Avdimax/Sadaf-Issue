@@ -231,7 +231,7 @@ export default function Variations() {
     <section
       ref={rootRef}
       id="variations"
-      className="relative bg-paper-2"
+      className="relative bg-pearl-2"
       aria-label="کارگاهِ نشان — فرآیندِ ساخت و تنوع‌ها"
       style={{ height: `calc(100svh + ${BRANDS.length * 70}svh)` }}
     >
@@ -243,14 +243,14 @@ export default function Variations() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(90% 60% at 14% 0%, rgba(201,161,91,0.09), transparent 55%), radial-gradient(70% 55% at 90% 100%, rgba(46,140,134,0.05), transparent 60%)",
+              "radial-gradient(90% 60% at 14% 0%, rgba(111,156,200,0.10), transparent 55%), radial-gradient(70% 55% at 90% 100%, rgba(79,154,148,0.06), transparent 60%)",
           }}
         />
 
         {/* Section head + the process rail */}
         <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-12">
           <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2">
-            <span className="label-fa text-brass-deep">۰۴ — مجموعه · کارگاهِ نشان</span>
+            <span className="label-fa text-ocean-deep">۰۴ — مجموعه · کارگاهِ نشان</span>
             <span className="h-px w-10 bg-ink/20" />
             <span className="label-fa text-[0.62rem] text-ink-faint">
               اسکرول کنید — فرآیندِ ساختِ هر نشان، گام‌به‌گام
@@ -263,7 +263,7 @@ export default function Variations() {
               </span>
             </span>
             <span className="block overflow-hidden pb-[0.4em] -mb-[0.2em]">
-              <span className="varx-head-line editorial block text-[8.6vw] font-medium text-brass-deep md:text-[4.7vw]">
+              <span className="varx-head-line editorial block text-[8.6vw] font-medium text-ocean-deep md:text-[4.7vw]">
                 تا هر آب‌وهوایی
               </span>
             </span>
@@ -279,7 +279,7 @@ export default function Variations() {
                   <span
                     className={`flex items-center gap-2.5 border px-3.5 py-2 transition-all duration-500 ${
                       active
-                        ? "border-brass/60 bg-card shadow-[0_10px_26px_rgba(72,58,32,0.12)]"
+                        ? "border-ocean/60 bg-shell shadow-[0_10px_26px_rgba(22,35,58,0.12)]"
                         : done
                           ? "border-ink/10 bg-transparent"
                           : "border-ink/10 bg-transparent opacity-70"
@@ -287,7 +287,7 @@ export default function Variations() {
                   >
                     <span
                       className={`h-1.5 w-1.5 rotate-45 transition-colors duration-500 ${
-                        active || done ? "bg-brass-deep" : "bg-ink/20"
+                        active || done ? "bg-ocean-deep" : "bg-ink/20"
                       }`}
                     />
                     <span className={`label-fa text-[0.68rem] ${active ? "text-ink" : "text-ink-soft"}`}>
@@ -295,7 +295,7 @@ export default function Variations() {
                     </span>
                   </span>
                   {active && (
-                    <span className="label-fa hidden text-[0.64rem] text-brass-deep md:inline">{s.sub}</span>
+                    <span className="label-fa hidden text-[0.64rem] text-ocean-deep md:inline">{s.sub}</span>
                   )}
                   {i < STEPS.length - 1 && (
                     <span className="hidden h-px w-5 bg-ink/15 md:block" aria-hidden="true" />
@@ -330,9 +330,9 @@ export default function Variations() {
               className="pointer-events-none absolute inset-x-[7%] inset-y-[6%] rounded-[2.2rem] transition-all duration-700 md:rounded-[2.6rem]"
               style={{
                 background:
-                  "radial-gradient(120% 90% at 50% 38%, #2b251d 0%, #211c15 62%)",
+                  "radial-gradient(120% 90% at 50% 38%, #1d2c48 0%, #152238 62%)",
                 boxShadow:
-                  "0 34px 90px -26px rgba(20,15,8,0.55), inset 0 0 0 1px rgba(201,161,91,0.16)",
+                  "0 34px 90px -26px rgba(15,26,44,0.55), inset 0 0 0 1px rgba(185,194,205,0.22)",
                 opacity: isWhite ? 1 : 0,
                 transform: isWhite ? "scale(1)" : "scale(0.955)",
               }}
@@ -348,7 +348,7 @@ export default function Variations() {
                 style={{ opacity: phase === "geometry" ? 1 : 0 }}
               >
                 <svg viewBox="0 0 200 200" className="h-full w-full" fill="none">
-                  <g stroke="#7C5A28" strokeWidth="0.7" opacity="0.6">
+                  <g stroke="#1D4066" strokeWidth="0.7" opacity="0.6">
                     <line x1="100" y1="4" x2="100" y2="196" pathLength="100" className="varx-draw" style={{ animationDelay: "0.05s" }} />
                     <line x1="4" y1="100" x2="196" y2="100" pathLength="100" className="varx-draw" style={{ animationDelay: "0.18s" }} />
                     <circle cx="100" cy="100" r="90" pathLength="100" className="varx-draw" style={{ animationDelay: "0.3s" }} />
@@ -357,7 +357,7 @@ export default function Variations() {
                     <circle cx="100" cy="100" r="58" strokeDasharray="2.5 4.5" className="varx-fade-in" />
                     <circle cx="100" cy="100" r="30" strokeDasharray="2.5 4.5" className="varx-fade-in" />
                   </g>
-                  <g stroke="#7C5A28" strokeWidth="1" opacity="0.55">
+                  <g stroke="#1D4066" strokeWidth="1" opacity="0.55">
                     <path d="M4 4h10M4 4v10" className="varx-fade-in" />
                     <path d="M196 4h-10M196 4v10" className="varx-fade-in" />
                     <path d="M4 196h10M4 196v-10" className="varx-fade-in" />
@@ -403,8 +403,8 @@ export default function Variations() {
 
             {/* Stage caption — the current step of the process */}
             <div data-varx-caption className="absolute bottom-0 start-0 z-10 md:bottom-1 md:start-1">
-              <span className="label-fa flex items-center gap-2 border border-ink/10 bg-paper/90 px-3 py-1.5 text-[0.64rem] text-ink-soft">
-                <span className="h-1 w-1 rotate-45 bg-brass" />
+              <span className="label-fa flex items-center gap-2 border border-ink/10 bg-pearl/90 px-3 py-1.5 text-[0.64rem] text-ink-soft">
+                <span className="h-1 w-1 rotate-45 bg-ocean" />
                 {phaseLabel}
               </span>
             </div>
@@ -414,8 +414,8 @@ export default function Variations() {
           <div className="order-2 lg:order-2 lg:col-span-5 lg:ps-10">
             <div key={brand.id} className="varx-meta-in">
               <div className="flex items-center gap-4">
-                <span className="h-px w-10 bg-brass/60" />
-                <span className="label-fa text-brass-deep">جزیره {faNum(brandIdx + 1).padStart(2, "۰")}</span>
+                <span className="h-px w-10 bg-ocean/60" />
+                <span className="label-fa text-ocean-deep">صدف {faNum(brandIdx + 1).padStart(2, "۰")}</span>
               </div>
 
               <h3 className="display-fa mt-4 text-4xl font-extrabold leading-[1.15] text-ink md:text-5xl">
@@ -424,7 +424,7 @@ export default function Variations() {
               <p className="label mt-2 text-[0.6rem] tracking-[0.3em] text-ink-faint">
                 {brand.latin}
               </p>
-              <p className="editorial mt-3 text-2xl font-medium text-brass-deep lg:text-3xl">
+              <p className="editorial mt-3 text-2xl font-medium text-ocean-deep lg:text-3xl">
                 {brand.tagline}
               </p>
               <p className="mt-5 max-w-md text-[0.9rem] font-light leading-loose text-ink-soft">
@@ -467,13 +467,13 @@ export default function Variations() {
                       aria-label={`${v.name} — ${v.short}`}
                       className={`group relative flex flex-col items-center gap-2 border p-2.5 transition-all duration-500 md:p-3 ${
                         active
-                          ? "border-brass bg-card shadow-[0_12px_30px_rgba(72,58,32,0.16)]"
-                          : "border-ink/15 bg-transparent hover:border-brass/50 hover:bg-card/60"
+                          ? "border-ocean bg-shell shadow-[0_12px_30px_rgba(22,35,58,0.16)]"
+                          : "border-ink/15 bg-transparent hover:border-ocean/50 hover:bg-shell/60"
                       }`}
                     >
                       <span
                         className={`relative flex h-14 w-full items-center justify-center overflow-hidden md:h-16 ${
-                          v.key === "white" ? "bg-ink" : "bg-card"
+                          v.key === "white" ? "bg-ink" : "bg-shell"
                         }`}
                       >
                         <Image
@@ -489,13 +489,13 @@ export default function Variations() {
                       </span>
                       <span
                         className={`label-fa text-[0.64rem] transition-colors duration-300 ${
-                          active ? "text-brass-deep" : "text-ink-soft group-hover:text-ink"
+                          active ? "text-ocean-deep" : "text-ink-soft group-hover:text-ink"
                         }`}
                       >
                         {v.short}
                       </span>
                       {active && (
-                        <span className="absolute -bottom-1 start-1/2 h-1 w-1 -translate-x-1/2 rotate-45 bg-brass" aria-hidden="true" />
+                        <span className="absolute -bottom-1 start-1/2 h-1 w-1 -translate-x-1/2 rotate-45 bg-ocean" aria-hidden="true" />
                       )}
                     </button>
                   );

@@ -53,22 +53,22 @@ export default function VelocityBand() {
   const phrase = (
     <>
       <span className="mx-6 md:mx-10">طراحیِ لوگو</span>
-      <span className="text-brass">✦</span>
+      <span className="text-ocean">✦</span>
       <span className="editorial mx-6 text-[0.9em] font-medium text-ink-soft md:mx-10">هویتِ بصری</span>
-      <span className="text-brass">✦</span>
+      <span className="text-ocean">✦</span>
       <span className="mx-6 md:mx-10">مونوگرام</span>
-      <span className="text-brass">✦</span>
+      <span className="text-ocean">✦</span>
       <span className="editorial mx-6 text-[0.9em] font-medium text-ink-soft md:mx-10">وردمارک</span>
-      <span className="text-brass">✦</span>
+      <span className="text-ocean">✦</span>
       <span className="mx-6 md:mx-10">نشانِ تجاری</span>
-      <span className="text-brass">✦</span>
+      <span className="text-ocean">✦</span>
     </>
   );
 
   return (
     <section
       ref={rootRef}
-      className="relative overflow-hidden border-y border-ink/10 bg-paper-2 py-10 md:py-14"
+      className="relative overflow-hidden border-y border-ink/10 bg-pearl-2 py-10 md:py-14"
       aria-label="حوزه‌های تخصصی"
     >
       <div className="flex w-max whitespace-nowrap will-change-transform" ref={trackRef} dir="ltr">

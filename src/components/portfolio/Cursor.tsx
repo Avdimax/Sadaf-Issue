@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Cursor v2 — an ink dot with an inertial brass ring.
+ * Cursor v2 — an ink dot with an inertial ocean ring.
  *
  *  · pointerover delegation — no DOM walking on every mousemove
  *  · the rAF loop sleeps when the cursor settles (zero idle cost)
@@ -152,17 +152,17 @@ export default function Cursor() {
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-[300] hidden md:block">
       <div
         ref={ringRef}
-        className="absolute left-0 top-0 h-9 w-9 rounded-full border border-brass/70 bg-paper/40 opacity-0 transition-opacity duration-300"
+        className="absolute left-0 top-0 h-9 w-9 rounded-full border border-ocean/70 bg-pearl/40 opacity-0 transition-opacity duration-300"
         style={{ willChange: "transform" }}
       />
       <div
         ref={dotRef}
-        className="absolute left-0 top-0 h-1.5 w-1.5 rounded-full bg-brass-deep opacity-0 transition-opacity duration-300"
+        className="absolute left-0 top-0 h-1.5 w-1.5 rounded-full bg-ocean-deep opacity-0 transition-opacity duration-300"
         style={{ willChange: "transform" }}
       />
       <span
         ref={labelRef}
-        className="cursor-label label-fa absolute left-0 top-0 text-[0.6rem] font-semibold text-ink [text-shadow:0_1px_6px_rgba(247,244,237,0.95)]"
+        className="cursor-label label-fa absolute left-0 top-0 text-[0.6rem] font-semibold text-ink [text-shadow:0_1px_6px_rgba(245,246,248,0.95)]"
         style={{ willChange: "transform" }}
       />
     </div>

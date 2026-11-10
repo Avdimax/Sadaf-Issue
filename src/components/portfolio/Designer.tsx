@@ -105,7 +105,7 @@ export default function Designer() {
     <section
       ref={rootRef}
       id="designer"
-      className="dotgrid relative overflow-hidden bg-paper py-28 md:py-36"
+      className="dotgrid relative overflow-hidden bg-pearl py-28 md:py-36"
       aria-label="طراح — معرفیِ صدف"
     >
       {/* Ambient daylight wash — gradient only, no css blur (see BrandStage) */}
@@ -114,7 +114,7 @@ export default function Designer() {
         className="pointer-events-none absolute -start-40 top-1/3 h-[40rem] w-[40rem] rounded-full opacity-60"
         style={{
           background:
-            "radial-gradient(circle, rgba(201,161,91,0.14) 0%, rgba(201,161,91,0.04) 45%, rgba(201,161,91,0) 70%)",
+            "radial-gradient(circle, rgba(111,156,200,0.14) 0%, rgba(111,156,200,0.04) 45%, rgba(111,156,200,0) 70%)",
         }}
       />
 
@@ -131,7 +131,7 @@ export default function Designer() {
         {/* Head */}
         <div className="mb-16 md:mb-20">
           <div className="flex items-center gap-5">
-            <span className="label-fa text-brass-deep">۰۶ — طراح</span>
+            <span className="label-fa text-ocean-deep">۰۶ — طراح</span>
             <span className="h-px flex-1 bg-ink/15" />
           </div>
           <h2 className="display-fa mt-8 font-black leading-[1.12] tracking-tight">
@@ -141,7 +141,7 @@ export default function Designer() {
               </span>
             </span>
             <span className="block overflow-hidden pb-[0.4em] -mb-[0.2em]">
-              <span className="designer-line editorial block text-[11vw] font-medium text-brass-deep md:text-[6.4vw]">
+              <span className="designer-line editorial block text-[11vw] font-medium text-ocean-deep md:text-[6.4vw]">
                 نشان‌ها
               </span>
             </span>
@@ -154,7 +154,7 @@ export default function Designer() {
             {/* Rotating girih star behind */}
             <div ref={girihRef} className="designer-girih pointer-events-none absolute -inset-14 md:-inset-20" aria-hidden="true">
               <svg viewBox="0 0 200 200" className="h-full w-full opacity-[0.15]" fill="none">
-                <g stroke="#7C5A28" strokeWidth="0.6">
+                <g stroke="#7E8B9D" strokeWidth="0.6">
                   <rect x="42" y="42" width="116" height="116" />
                   <rect x="42" y="42" width="116" height="116" transform="rotate(45 100 100)" />
                   <circle cx="100" cy="100" r="81" />
@@ -167,13 +167,13 @@ export default function Designer() {
             {/* Arch echo hairline */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 translate-x-3 translate-y-3 rounded-t-full border border-brass/35"
+              className="absolute inset-0 translate-x-3 translate-y-3 rounded-t-full border border-ocean/35"
             />
 
             {/* The arch portrait */}
             <div
               data-cursor="view"
-              className="designer-portrait relative aspect-[4/5] overflow-hidden rounded-t-full shadow-[0_45px_90px_-25px_rgba(80,62,35,0.4)]"
+              className="designer-portrait relative aspect-[4/5] overflow-hidden rounded-t-full shadow-[0_45px_90px_-25px_rgba(22,35,58,0.4)]"
             >
               <div ref={portraitInnerRef} className="absolute inset-0">
                 <Image
@@ -192,7 +192,7 @@ export default function Designer() {
                 className="pointer-events-none absolute inset-0 z-10"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(255,251,242,0.14) 0%, rgba(124,90,40,0.06) 46%, rgba(46,53,40,0.16) 100%)",
+                    "linear-gradient(180deg, rgba(255,255,255,0.13) 0%, rgba(125,140,160,0.07) 46%, rgba(22,35,58,0.16) 100%)",
                 }}
               />
               <div
@@ -200,7 +200,7 @@ export default function Designer() {
                 className="pointer-events-none absolute inset-x-0 top-0 z-10 h-1/3"
                 style={{
                   background:
-                    "radial-gradient(80% 90% at 50% 0%, rgba(255,250,238,0.22), transparent 70%)",
+                    "radial-gradient(80% 90% at 50% 0%, rgba(255,255,255,0.2), transparent 70%)",
                 }}
               />
             </div>
@@ -208,7 +208,7 @@ export default function Designer() {
             {/* The floating atelier seal */}
             <div className="designer-seal absolute -bottom-9 -end-7 md:-end-10" data-cursor="view">
               <div className="relative flex h-28 w-28 items-center justify-center md:h-32 md:w-32">
-                <div className="spin-slow absolute inset-0 rounded-full border border-dashed border-brass/45 bg-paper/90" />
+                <div className="spin-slow absolute inset-0 rounded-full border border-dashed border-ocean/45 bg-pearl/90" />
                 <div className="spin-slower absolute inset-2 rounded-full border border-ink/10" />
                 <div className="logo-bob relative">
                   <Image
@@ -232,11 +232,11 @@ export default function Designer() {
               ].map((s, i) => (
                 <span
                   key={i}
-                  className="absolute h-1 w-1 rounded-full bg-brass"
+                  className={`absolute h-1 w-1 rounded-full ${i % 3 === 0 ? "bg-ocean-bright" : "bg-silver"}`}
                   style={{
                     left: s.l,
                     top: s.t,
-                    boxShadow: "0 0 8px rgba(168,124,63,0.7)",
+                    boxShadow: i % 3 === 0 ? "0 0 8px rgba(111,156,200,0.65)" : "0 0 8px rgba(185,194,205,0.9)",
                     animation: `firefly ${5 + i}s ease-in-out ${s.d} infinite`,
                   }}
                 />
@@ -249,7 +249,7 @@ export default function Designer() {
             <h3 className="display-fa text-6xl font-extrabold leading-none text-ink md:text-7xl">
               صدف
             </h3>
-            <p className="designer-meta editorial mt-4 text-3xl font-medium text-brass-deep md:text-4xl">
+            <p className="designer-meta editorial mt-4 text-3xl font-medium text-ocean-deep md:text-4xl">
               طراحِ لوگو، صنعتگرِ هویتِ بصری
             </p>
 
@@ -265,7 +265,7 @@ export default function Designer() {
               {facts.map((f, i) => (
                 <span key={f} className="flex items-center gap-2.5">
                   <svg width="7" height="7" viewBox="0 0 8 8" aria-hidden="true" className="shrink-0">
-                    <rect x="1.2" y="1.2" width="5.6" height="5.6" fill="#A87C3F" transform="rotate(45 4 4)" opacity={i === 0 ? 0.9 : 0.55} />
+                    <rect x="1.2" y="1.2" width="5.6" height="5.6" fill="#2E5C8F" transform="rotate(45 4 4)" opacity={i === 0 ? 0.9 : 0.55} />
                   </svg>
                   <span className="label-fa text-[0.74rem] text-ink-soft">{f}</span>
                 </span>
@@ -276,15 +276,15 @@ export default function Designer() {
             <button
               data-cursor="link"
               onClick={openOrder}
-              className="designer-meta group mt-12 flex items-center gap-4 border border-brass/40 px-8 py-4 transition-colors duration-500 hover:border-brass hover:bg-brass"
+              className="designer-meta group mt-12 flex items-center gap-4 border border-ocean/40 px-8 py-4 transition-colors duration-500 hover:border-ocean hover:bg-ocean"
               aria-label="شروع سفارش طراحی لوگو"
             >
-              <span className="label-fa text-[0.8rem] text-brass-deep transition-colors duration-500 group-hover:text-paper">
+              <span className="label-fa text-[0.8rem] text-ocean-deep transition-colors duration-500 group-hover:text-pearl">
                 نشانِ شما را بسازیم؟
               </span>
-              <span className="flex h-8 w-8 items-center justify-center rounded-full border border-brass/50 transition-all duration-500 group-hover:border-paper/40 group-hover:bg-paper/10">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full border border-ocean/50 transition-all duration-500 group-hover:border-pearl/40 group-hover:bg-pearl/10">
                 <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="text-brass-deep transition-colors duration-500 group-hover:text-paper" />
+                  <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="text-ocean-deep transition-colors duration-500 group-hover:text-pearl" />
                 </svg>
               </span>
             </button>

@@ -65,11 +65,11 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Scroll progress — a brass hairline growing from the right (RTL) */}
+      {/* Scroll progress — a ocean hairline growing from the right (RTL) */}
       <div
         aria-hidden="true"
         ref={progressRef}
-        className="fixed inset-x-0 top-0 z-[130] h-[2px] origin-right bg-gradient-to-l from-brass-bright via-brass to-brass-deep/70"
+        className="fixed inset-x-0 top-0 z-[130] h-[2px] origin-right bg-gradient-to-l from-ocean-bright via-ocean to-ocean-deep/70"
         style={{ transform: "scaleX(0)" }}
       />
 
@@ -78,9 +78,9 @@ export default function Navbar() {
 
       <header
         className={`fixed inset-x-0 top-0 z-[100] transition-all duration-700 ${
-          // solid paper instead of backdrop-blur: a blurred fixed header
+          // solid pearl instead of backdrop-blur: a blurred fixed header
           // re-rasterizes its backdrop on every scroll frame
-          scrolled ? "border-b border-ink/10 bg-paper/95" : ""
+          scrolled ? "border-b border-ink/10 bg-pearl/95" : ""
         }`}
       >
         <nav className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-12">
@@ -91,11 +91,11 @@ export default function Navbar() {
             aria-label="بازگشت به بالا"
           >
             <span className="relative flex h-8 w-8 items-center justify-center">
-              <span className="spin-slow absolute inset-0 rounded-full border border-dashed border-brass/50" />
-              <span className="h-1.5 w-1.5 rounded-full bg-brass transition-all duration-500 group-hover:scale-150 group-hover:shadow-[0_0_12px_rgba(201,161,91,0.9)]" />
+              <span className="spin-slow absolute inset-0 rounded-full border border-dashed border-ocean/50" />
+              <span className="h-1.5 w-1.5 rounded-full bg-ocean transition-all duration-500 group-hover:scale-150 group-hover:shadow-[0_0_12px_rgba(111,156,200,0.9)]" />
             </span>
             <span className="display-fa text-xl font-extrabold text-ink">
-              صدف<span className="text-brass">.</span>
+              صدف<span className="text-ocean">.</span>
             </span>
           </button>
 
@@ -109,12 +109,12 @@ export default function Navbar() {
                     onClick={() => scrollToId(l.href)}
                     aria-current={isActive ? "true" : undefined}
                     className={`label-fa group relative text-[0.8rem] transition-colors duration-300 ${
-                      isActive ? "text-brass-deep" : "text-ink-soft hover:text-ink"
+                      isActive ? "text-ocean-deep" : "text-ink-soft hover:text-ink"
                     }`}
                   >
                     {l.label}
                     <span
-                      className={`absolute -bottom-1.5 start-0 h-px bg-brass transition-all duration-500 ${
+                      className={`absolute -bottom-1.5 start-0 h-px bg-ocean transition-all duration-500 ${
                         isActive ? "w-full" : "w-0 group-hover:w-full"
                       }`}
                     />
@@ -127,7 +127,7 @@ export default function Navbar() {
           <button
             data-cursor="link"
             onClick={openOrder}
-            className="label-fa border border-brass/40 px-5 py-2.5 text-[0.78rem] text-brass-deep transition-all duration-500 hover:border-brass hover:bg-brass hover:text-paper hover:shadow-[0_10px_30px_rgba(168,124,63,0.3)]"
+            className="label-fa border border-ocean/40 px-5 py-2.5 text-[0.78rem] text-ocean-deep transition-all duration-500 hover:border-ocean hover:bg-ocean hover:text-pearl hover:shadow-[0_10px_30px_rgba(46,92,143,0.3)]"
           >
             سفارش طراحی
           </button>

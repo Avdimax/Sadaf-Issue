@@ -88,10 +88,10 @@ export default function MoodReel() {
       aria-label="مودبوردها — فضای پیش از هر نشان"
     >
       {/* Sticky stage — the museum wall */}
-      <div className="dotgrid sticky top-0 flex h-svh flex-col justify-between overflow-hidden bg-paper py-20 md:py-24">
+      <div className="dotgrid sticky top-0 flex h-svh flex-col justify-between overflow-hidden bg-pearl py-20 md:py-24">
         {/* Head row */}
         <div className="relative z-10 mx-auto flex w-full max-w-[1600px] items-center gap-5 px-6 md:px-12">
-          <span className="label-fa text-brass-deep">حال‌وهوا — فضای پیش از نشان</span>
+          <span className="label-fa text-ocean-deep">حال‌وهوا — فضای پیش از نشان</span>
           <span className="h-px flex-1 bg-ink/15" />
         </div>
 
@@ -101,7 +101,7 @@ export default function MoodReel() {
           style={{ width: "min(1080px, 86vw, calc((100svh - 330px) * 1.55))" }}
         >
           {/* Museum mat — borderless, layered soft shadow */}
-          <div className="relative bg-card p-4 shadow-[0_36px_90px_-18px_rgba(72,58,32,0.28),0_4px_14px_rgba(72,58,32,0.1)] md:p-7">
+          <div className="relative bg-shell p-4 shadow-[0_36px_90px_-18px_rgba(22,35,58,0.28),0_4px_14px_rgba(22,35,58,0.1)] md:p-7">
             <div className="relative aspect-[16/10] overflow-hidden">
               {FRAMES.map((f, i) => (
                 <div
@@ -127,7 +127,7 @@ export default function MoodReel() {
                 className="pointer-events-none absolute inset-0 z-10"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(247,244,237,0.14) 0%, transparent 22%, transparent 74%, rgba(33,28,21,0.2) 100%)",
+                    "linear-gradient(180deg, rgba(245,246,248,0.14) 0%, transparent 22%, transparent 74%, rgba(22,35,58,0.2) 100%)",
                 }}
               />
               {/* mat window bevel */}
@@ -142,8 +142,8 @@ export default function MoodReel() {
                 <h3 className="display-fa text-[8.5vw] font-extrabold leading-none text-ink md:text-[3.6vw]">
                   {f.word}
                 </h3>
-                <span aria-hidden="true" className="hidden h-8 w-px bg-brass/40 md:block" />
-                <p className="editorial text-[5.5vw] font-medium text-brass-deep md:text-[2vw]">
+                <span aria-hidden="true" className="hidden h-8 w-px bg-ocean/40 md:block" />
+                <p className="editorial text-[5.5vw] font-medium text-ocean-deep md:text-[2vw]">
                   {f.sub}
                 </p>
               </div>
@@ -157,7 +157,7 @@ export default function MoodReel() {
             {FRAMES.map((f, i) => (
               <span
                 key={f.word + i}
-                className="reel-dot block h-1 w-8 origin-right scale-x-[0.35] bg-brass/40 transition-all duration-500 [&.active]:scale-x-100 [&.active]:bg-brass-deep"
+                className="reel-dot block h-1 w-8 origin-right scale-x-[0.35] bg-ocean/40 transition-all duration-500 [&.active]:scale-x-100 [&.active]:bg-ocean-deep"
               />
             ))}
           </div>

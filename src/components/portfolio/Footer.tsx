@@ -92,7 +92,7 @@ export default function Footer() {
     <footer
       ref={rootRef}
       id="contact"
-      className="relative overflow-hidden bg-paper-2 pt-28 md:pt-36"
+      className="relative overflow-hidden bg-pearl-2 pt-28 md:pt-36"
       aria-label="سفارش و تماس"
     >
       {/* Quiet horizon atmosphere */}
@@ -101,13 +101,13 @@ export default function Footer() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(100% 70% at 50% 0%, rgba(201,161,91,0.12), rgba(238,233,221,0) 70%)",
+            "radial-gradient(100% 70% at 50% 0%, rgba(111,156,200,0.13), rgba(233,235,239,0) 70%)",
         }}
       />
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="flex items-center gap-5">
-          <span className="label-fa text-brass-deep">۰۷ — سفارش</span>
+          <span className="label-fa text-ocean-deep">۰۷ — سفارش</span>
           <span className="h-px flex-1 bg-ink/15" />
         </div>
 
@@ -118,7 +118,7 @@ export default function Footer() {
             </span>
           </span>
           <span className="block overflow-hidden pb-[0.36em] -mb-[0.26em]">
-            <span className="footer-line editorial block text-[12vw] font-medium text-brass-deep md:text-[7vw]">
+            <span className="footer-line editorial block text-[12vw] font-medium text-ocean-deep md:text-[7vw]">
               نشانِ شما را بسازیم
             </span>
           </span>
@@ -137,11 +137,11 @@ export default function Footer() {
               ref={magnetRef}
               data-cursor="link"
               onClick={openOrder}
-              className="footer-meta group relative mt-10 inline-flex items-center gap-5 border border-brass bg-brass px-10 py-5 text-paper transition-colors duration-500 hover:bg-brass-deep hover:border-brass-deep"
+              className="footer-meta btn-sheen group relative mt-10 inline-flex items-center gap-5 border border-ocean bg-ocean px-10 py-5 text-pearl transition-colors duration-500 hover:bg-ocean-deep hover:border-ocean-deep"
               aria-label="شروعِ سفارش طراحی — گفت‌وگوی پرسش‌به‌پرسش"
             >
               <span className="label-fa text-[0.85rem]">شروعِ سفارش</span>
-              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-paper/40 transition-all duration-500 group-hover:bg-paper/10">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-pearl/40 transition-all duration-500 group-hover:bg-pearl/10">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                   <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -162,7 +162,7 @@ export default function Footer() {
                   className="label-fa group relative text-[0.76rem] text-ink-soft transition-colors duration-300 hover:text-ink"
                 >
                   {s}
-                  <span className="absolute -bottom-1 start-0 h-px w-0 bg-brass transition-all duration-500 group-hover:w-full" />
+                  <span className="absolute -bottom-1 start-0 h-px w-0 bg-ocean transition-all duration-500 group-hover:w-full" />
                 </a>
               ))}
             </div>
@@ -171,7 +171,7 @@ export default function Footer() {
           {/* The sign-off mark + Nastaliq signature */}
           <div className="footer-mark flex flex-col items-center gap-10 lg:col-span-6 lg:items-end">
             <div className="relative">
-              <div className="spin-slow absolute -inset-7 rounded-full border border-dashed border-brass/30 md:-inset-10" />
+              <div className="spin-slow absolute -inset-7 rounded-full border border-dashed border-ocean/30 md:-inset-10" />
               <div className="logo-bob relative">
                 <Image
                   src={asset("/work/oxin-gradient.png")}
@@ -197,7 +197,7 @@ export default function Footer() {
             <a
               href="mailto:hello@sadaf.design"
               data-cursor="link"
-              className="footer-meta label-fa text-ink-faint transition-colors hover:text-brass-deep"
+              className="footer-meta label-fa text-ink-faint transition-colors hover:text-ocean-deep"
             >
               hello@sadaf.design
             </a>
